@@ -35,4 +35,4 @@ class Message(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.content[0:5]
+        return self.content[0:10]

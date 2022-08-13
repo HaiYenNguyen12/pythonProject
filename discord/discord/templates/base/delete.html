@@ -4,7 +4,12 @@
 <form method="POST" action = "">
     {% csrf_token %}
     {{form.as_p}}
-    <p> Are you sure you want ro delete room with name "{{room.name}}" ???</p>
+    {% if page != None %}
+    <p> Are you sure you want to delete message "{{obj}}" ???</p>
+    {%else%}
+    
+    <p> Are you sure you want to delete room with name "{{room.name}}" ???</p>
+    {% endif %}
     <a href="{{request.META.HTTP_REFERER}}">GO BACK </a>
     <input type="submit" value="conform"></input>
 </form>

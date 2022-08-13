@@ -38,4 +38,13 @@
   <form method = "GET" action = "{%url 'home'%}">
     <input type="text" name="q" placeholder="Search rooms..."></input>
   </form>
+
+{% if request.user.is_authenticated%}
+<p>Hello {{request.user}} </p>
+<a href="{%url 'logout'%}">Log out </a>
+{%else%}
+<a href="{%url 'login'%}">Log in </a>
+
+{%endif%}
+
   </nav>

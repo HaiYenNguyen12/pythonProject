@@ -1,15 +1,18 @@
 {% extends 'base/base.html' %}
-{%block content%}
-
+{% block content%}
+<h1>{{user.username}}</h1>
 <style>
-    .home-container {
-        display: grid;
-        grid-template-columns: 1fr 3fr 1fr;
 
-    }
+        .profile-container {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+    
+        }
+    
 </style>
 
-<div class="home-container">
+
+<div class="profile-container">
     <div>
         {% include 'base/topic_component.html' %}
     </div>
@@ -27,6 +30,4 @@
 
 
 </div>
-
-
 {%endblock content%}

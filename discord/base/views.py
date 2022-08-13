@@ -74,7 +74,9 @@ def create_room (request, *args, **kwargs):
     if request.method == 'POST':
         form = RoomForm(request.POST)
         if form.is_valid():
-            form.save()
+            temp_room = form.save(commit=False)
+            temp_room.host = request.user
+            temp_room.save()
             return redirect("home")
 
     context = {
@@ -172,3 +174,19 @@ def deleteMessage(request, pk,  *args, **kwargs):
         "page" : page
     }
     return render(request,"base/delete.html", context=context)
+
+
+def profileUser(request, pk , *args, **kwargs):
+    user = User.objects.get(id=pk)
+    qs_topic = Topic.objects.all()
+    room_list = user.room_set.all()
+    room_messages = user.message_set.all()
+    context={
+        "user": user,
+        "room_list": room_list, 
+        "room_count" : room_list.count(),
+        "room_messages" : room_messages,
+        "topics" : qs_topic,
+
+        }
+    return render(request, "base/profile.html",context )

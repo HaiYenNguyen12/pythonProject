@@ -1,17 +1,15 @@
-<!doctype html>
-{% load  static %}
+<!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="theme-color" content="#000000"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel='stylesheet' type='text/css' media='screen' href= "{%static 'styles/main.css' %}">
-    <title>Discord-Like App</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href= "{%static 'styles/main.css' %}" />
+    <title>SunnyWorld - The World of Secret</title>
   </head>
+
   <body>
 {% include "base/navbar.html"  %}
 <div class="container">
@@ -30,6 +28,6 @@
 
 
 {% comment %} {% include 'react/base_embed.html'%} {% endcomment %}
-{% comment %} {% include 'react/js.html'%} {% endcomment %}
+<script src = "{% static 'js/script.js' %}"></script>
   </body>
 </html>

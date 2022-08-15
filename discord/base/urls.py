@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from base.views import (delete_view, home_view, 
+from base.views import (topicPage, updateUser, home_view, 
 create_room , room_view, delete_room, profileUser,
 update_room, loginPage,logoutPage,registerPage, deleteMessage)
 
@@ -15,5 +15,6 @@ urlpatterns = [
     path('delete-message/<int:pk>/', deleteMessage, name="delete-message"),
     path('delete/<int:pk>/', delete_room, name = "delete_room"),
     path('profile/<int:pk>/', profileUser, name = "profile"),
-
+    path('update-user/',updateUser, name="update-user"),
+    path('topics/',topicPage, name="topic")
 ]
